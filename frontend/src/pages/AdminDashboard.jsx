@@ -85,7 +85,7 @@ function AdminDashboard({ darkMode, toggleTheme }) {
             <h1 className={`title ${darkMode ? "title-dark" : ""}`}>{t.adminDashboard}</h1>
             <p className="section-subtitle">{t.adminSubtitle}</p>
           </div>
-          <span className="badge badge-amber">{t.backendPending}</span>
+          <span className={`badge ${darkMode ? "badge-blue-dark" : "badge-amber"}`}>{t.backendPending}</span>
         </div>
 
         {/* Tabs */}

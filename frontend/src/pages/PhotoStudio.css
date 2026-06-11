@@ -447,9 +447,9 @@
 
 [data-theme='dark'] .photo-studio-page {
     background:
-        radial-gradient(1400px 700px at 10% 10%, rgba(255, 233, 77, 0.32), transparent 35%),
-        radial-gradient(1000px 600px at 90% 10%, rgba(255, 191, 0, 0.22), transparent 40%),
-        linear-gradient(145deg, #000000 10%, #0f0f0f 50%, #1a1200 100%);
+        radial-gradient(1400px 700px at 10% 10%, color-mix(in srgb, var(--color-primary-dark) 32%, transparent), transparent 35%),
+        radial-gradient(1000px 600px at 90% 10%, color-mix(in srgb, var(--color-text-dark2) 22%, transparent), transparent 40%),
+        linear-gradient(145deg, #000000 10%, color-mix(in srgb, var(--color-bg) 50%, #000000) 50%, var(--color-bg) 100%);
     color: #ffffff;
 }
 
@@ -544,8 +544,8 @@
 }
 
 [data-theme='dark'] .value-display {
-    color: #facc15;
-    background: rgba(250, 204, 21, 0.12);
+    color: var(--color-text-dark);
+    background: rgba(255, 255, 255, 0.12);
 }
 
 [data-theme='dark'] .tool-btn {
@@ -558,8 +558,8 @@
 }
 
 [data-theme='dark'] .tool-btn.active {
-    background: rgba(250, 204, 21, 0.15);
-    color: #facc15;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--color-text-dark);
 }
 
 [data-theme='dark'] .toolbar-divider {

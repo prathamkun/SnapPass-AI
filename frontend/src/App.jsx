@@ -20,23 +20,26 @@ function App() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
-  const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
+
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
+  
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
-  }, [darkMode]);
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const darkMode = ['dark', 'dark-blue'].includes(theme);
 
   const toggleTheme = () => {
-    const next = !darkMode;
-    setDarkMode(next);
-    document.documentElement.setAttribute('data-theme', next ? 'dark' : 'light');
-    localStorage.setItem('theme', next ? 'dark' : 'light');
-    return next; // this line was missing in the early code 
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
+    return nextTheme === 'dark'; 
   }
 
   return (
     <ToastProvider>
       <div className="app-shell">
-        <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
+        <Navbar darkMode={darkMode} toggleTheme={toggleTheme} theme={theme} setTheme={setTheme} />
         <main className="app-main">
           <AppRoutes darkMode={darkMode} toggleTheme={toggleTheme} />
         </main>

@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, Settings } from 'lucide-react';
 import './Navbar.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../../context/LanguageContext';
 import { translations } from '../../translations/translations';
+import SettingsSidebar from './SettingsSidebar';
 
 /**
  * Navbar — fixed top navigation bar.
  * Shows logo, main nav links, and a mobile hamburger toggle.
  */
-function Navbar({ darkMode, toggleTheme }) {
+function Navbar({ darkMode, toggleTheme, theme, setTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [languageOpen, setLanguageOpen] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   const { language, setLanguage } = useLanguage();
   const t = translations[language];
@@ -44,6 +46,7 @@ function Navbar({ darkMode, toggleTheme }) {
       if (e.key === 'Escape') {
         setLanguageOpen(false);
         setMenuOpen(false);
+        setSettingsOpen(false);
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -167,12 +170,15 @@ function Navbar({ darkMode, toggleTheme }) {
               )}
             </div>
 
-            <button
-              onClick={toggleTheme}
-              className={`flex items-center justify-center w-10 ml-auto p-2 hover:no-underline h-10 rounded-full ${darkMode ? 'bg-gray-700' : 'bg-[#a2bece]'}`}
-            >
-              {darkMode ? <Sun className="text-amber-500" /> : <Moon />}
-            </button>
+            <div className="navbar__settings">
+              <button
+                onClick={() => setSettingsOpen(true)}
+                className={`flex items-center justify-center w-10 ml-auto p-2 hover:no-underline h-10 rounded-full transition-colors ${darkMode ? 'bg-gray-700 text-gray-200 hover:bg-gray-600' : 'bg-[#e7f4fe] text-blue-600 hover:bg-blue-100'}`}
+                aria-label="Settings"
+              >
+                <Settings size={20} />
+              </button>
+            </div>
 
             <Link
               to="/upload"
@@ -276,6 +282,13 @@ function Navbar({ darkMode, toggleTheme }) {
           ))}
         </nav>
       </header>
+      
+      <SettingsSidebar 
+        isOpen={settingsOpen} 
+        onClose={() => setSettingsOpen(false)} 
+        theme={theme} 
+        setTheme={setTheme} 
+      />
     </>
   );
 }

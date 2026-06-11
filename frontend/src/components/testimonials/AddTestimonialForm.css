@@ -16,7 +16,7 @@
 
 .add-testimonial-form-dark {
   background: rgba(0, 0, 0, 0.85);
-  border: 1px solid rgba(255, 191, 0, 0.2);
+  border: 1px solid color-mix(in srgb, var(--color-primary-dark) 20%, transparent);
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
 
@@ -223,7 +223,7 @@
 }
 
 .submit-btn-dark {
-  background: linear-gradient(135deg, #fbbf24, #c5b804);
+  background: linear-gradient(135deg, var(--color-text-dark2), var(--color-primary-dark));
   color: #000000;
 }
 

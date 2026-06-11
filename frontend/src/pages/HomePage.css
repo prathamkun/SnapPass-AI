@@ -18,9 +18,9 @@
 
 .home-page-dark {
   background:
-    radial-gradient(1400px 700px at 10% 10%, rgb(255, 233, 77, 0.32), transparent 35%),
-    radial-gradient(1000px 600px at 90% 10%, rgba(255, 191, 0, 0.22), transparent 40%),
-    linear-gradient(145deg, #000000 10%, #0f0f0f 50%, #1a1200 100%);
+    radial-gradient(1400px 700px at 10% 10%, color-mix(in srgb, var(--color-primary-dark) 32%, transparent), transparent 35%),
+    radial-gradient(1000px 600px at 90% 10%, color-mix(in srgb, var(--color-text-dark2) 22%, transparent), transparent 40%),
+    linear-gradient(145deg, #000000 10%, color-mix(in srgb, var(--color-bg) 50%, #000000) 50%, var(--color-bg) 100%);
 
   margin-top: -140px;
   padding-top: 170px;
@@ -121,7 +121,7 @@
 }
 
 .badge-blue-dark {
-  background-color: #c5b804;
+  background-color: var(--color-primary-dark);
   color: #ffffff;
 }
 
@@ -157,11 +157,10 @@
 
 .hero__photo-frame-dark {
   background:
-
     linear-gradient(145deg,
-      rgba(69, 66, 9, 0.206) 0%,
-      #353824bb 60%,
-      rgb(69, 66, 9)100%);
+      color-mix(in srgb, var(--color-primary-dark) 20%, transparent) 0%,
+      color-mix(in srgb, var(--color-border-dark) 70%, transparent) 60%,
+      color-mix(in srgb, var(--color-primary-dark) 30%, transparent) 100%);
 
 }
 
@@ -305,14 +304,14 @@
   height: 4rem;
 
   background: #111111;
-  border: 4px solid #d4af37;
+  border: 4px solid var(--color-primary-dark);
   border-radius: 50%;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: #f5d76e;
+  color: var(--color-text-dark);
   font-size: 1.5rem;
 
   z-index: 3;
@@ -321,14 +320,14 @@
 
   box-shadow:
     0 0 0 0.5rem #fafafa,
-    0 0 12px rgba(212, 175, 55, 0.15);
+    0 0 12px color-mix(in srgb, var(--color-primary-dark) 15%, transparent);
 }
 
 .step-card:hover .step-card__icon {
   background: linear-gradient(
     135deg,
-    #f8d568,
-    #d4af37
+    var(--color-text-dark),
+    var(--color-primary-dark)
   );
 
   color: #111111;
@@ -337,7 +336,7 @@
 
   box-shadow:
     0 0 0 0.5rem rgba(255, 255, 255, 0.8),
-    0 0 25px rgba(212, 175, 55, 0.4);
+    0 0 25px color-mix(in srgb, var(--color-primary-dark) 40%, transparent);
 }
 
 .step-card__content {
@@ -381,8 +380,8 @@
 /* bug fixed -> here the white line is overwritten with the icon so to correct it we have changed the background to a premium black color */
 .step-card__icon-dark {
   background: #111111;
-  border: 4px solid #d4af37;
-  color: #d4af37;
+  border: 4px solid var(--color-primary-dark);
+  color: var(--color-primary-dark);
 }
 
 .step-card__label {
@@ -479,10 +478,10 @@
 
   background:
     radial-gradient(1200px 500px at 50% 0%,
-      rgba(255, 233, 77, 0.12),
+      color-mix(in srgb, var(--color-primary-dark) 12%, transparent),
       transparent 55%),
-    radial-gradient(1000px 600px at 10% 90%, rgba(255, 191, 0, 0.22), transparent 40%),
-    linear-gradient(-145deg, #000000 10%, #0f0f0f 50%, #1a1200 100%);
+    radial-gradient(1000px 600px at 10% 90%, color-mix(in srgb, var(--color-text-dark2) 22%, transparent), transparent 40%),
+    linear-gradient(-145deg, #000000 10%, color-mix(in srgb, var(--color-bg) 50%, #000000) 50%, var(--color-bg) 100%);
 }
 
 .features-grid {
@@ -536,7 +535,7 @@
 
 .feature-card-dark:hover {
   border-color: rgba(37, 99, 235, 0.25);
-  background: rgba(46, 38, 0, 0.92);
+  background: color-mix(in srgb, var(--color-surface) 92%, transparent);
 }
 
 /* Preview */
@@ -636,7 +635,7 @@
 }
 
 .feature-card__icon-dark {
-  background: rgba(69, 66, 9, 0.206);
+  background: color-mix(in srgb, var(--color-primary-dark) 20%, transparent);
   color: white;
 }
 
@@ -777,10 +776,10 @@
   width: 100%;
   background:
     radial-gradient(1200px 500px at 50% 0%,
-      rgba(255, 233, 77, 0.12),
+      color-mix(in srgb, var(--color-primary-dark) 12%, transparent),
       transparent 55%),
-    radial-gradient(1000px 600px at 10% 90%, rgba(255, 191, 0, 0.22), transparent 40%),
-    linear-gradient(-145deg, #000000 10%, #0f0f0f 50%, #1a1200 100%);
+    radial-gradient(1000px 600px at 10% 90%, color-mix(in srgb, var(--color-text-dark2) 22%, transparent), transparent 40%),
+    linear-gradient(-145deg, #000000 10%, color-mix(in srgb, var(--color-bg) 50%, #000000) 50%, var(--color-bg) 100%);
 }
 
 .ai-showcase-dark-light {
@@ -1030,15 +1029,15 @@
   width: 100%;
   display: flex;
   background: #141414;
-  border-color: #facc15;
-  color: #facc15;
+  border-color: var(--color-text-dark);
+  color: var(--color-text-dark);
   box-shadow: 0 0 0 0.5rem #090909;
 
 
   background:
-    radial-gradient(1400px 700px at 10% 30%, rgba(255, 191, 0, 0.12), transparent 40%),
-    radial-gradient(700px 700px at 100% 100%, rgba(255, 233, 77, 0.32), transparent 35%),
-    linear-gradient(145deg, #000000 10%, #0f0f0f 50%, #1a1200 100%);
+    radial-gradient(1400px 700px at 10% 30%, color-mix(in srgb, var(--color-primary-dark) 12%, transparent), transparent 40%),
+    radial-gradient(700px 700px at 100% 100%, color-mix(in srgb, var(--color-text-dark2) 32%, transparent), transparent 35%),
+    linear-gradient(145deg, #000000 10%, color-mix(in srgb, var(--color-bg) 50%, #000000) 50%, var(--color-bg) 100%);
 }
 
 
@@ -1148,7 +1147,7 @@
 
 /* upscroll button dark mode */
 [data-theme='dark'] .back-to-top {
-  background: linear-gradient(135deg, #facc15, #e8c500);
+  background: linear-gradient(135deg, var(--color-text-dark), var(--color-primary-dark));
   color: #0c0a00;
 }
 
@@ -1158,6 +1157,6 @@
 }
 
 [data-theme='dark'] .cta-banner .btn-primary {
-  background: #facc15;
+  background: var(--color-text-dark);
   color: #000;
 }

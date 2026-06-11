@@ -142,6 +142,7 @@
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
+  margin-left: 20px;
 }
 
 .navbar__cta {
@@ -153,7 +154,7 @@
 }
 
 .navbar__cta-dark {
-  background-color: #e8c500da;
+  background-color: var(--color-primary-dark);
   color: white;
   font-weight: bold;
 }
@@ -294,7 +295,7 @@
 /* Active mobile links */
 .navbar__mobile-link--active-dark {
   background: #374151;
-  color: #facc15;
+  color: var(--color-text-dark);
   font-weight: 600;
 }
 
@@ -484,7 +485,7 @@
 
 .navbar__language-selector-dark:hover {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(232, 197, 0, 0.45);
+  border-color: var(--color-border-dark);
 }
 
 @supports selector(:focus-visible) {
@@ -544,9 +545,9 @@
 }
 
 .navbar__progress-bar-dark {
-  background: linear-gradient(90deg,#d4af37,#e8c500, #facc15);
+  background: linear-gradient(90deg, var(--color-text-dark2), var(--color-text-dark));
 
-  box-shadow: 0 0 12px rgba(250, 204, 21, 0.5);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
 }
 
 .dropdown-arrow {
@@ -594,8 +595,7 @@
 
 .navbar__language-menu-dark {
   background: #111111;
-  border: 1px solid #e8c500;
-
+  border: 1px solid var(--color-border-dark);
   box-shadow:
     0 8px 24px rgba(0,0,0,0.35);
 }
@@ -606,8 +606,8 @@
 }
 
 .navbar__language-menu-dark button:hover {
-  background: rgba(232,197,0,0.15);
-  color: #facc15;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-dark);
 }
 
 .navbar__language-menu-light {

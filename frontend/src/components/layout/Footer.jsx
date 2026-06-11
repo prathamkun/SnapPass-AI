@@ -68,51 +68,7 @@ function Footer({ darkMode }) {
 
 
       <div className="footer__container">
-        {/* CTA SECTION */}
-        <div className={`footer__cta ${darkMode ? 'footer__cta-dark' : ''}`}>
-          <div className="footer__cta-content">
-            <h2 className="footer__cta-title">
-              {language === 'hi'
-                ? 'कुछ ही सेकंड में पासपोर्ट फोटो बनाएं'
-                : 'Create Passport Photos in Seconds'}
-            </h2>
 
-            <p className="footer__cta-text">
-              {language === 'hi'
-                ? 'AI-संचालित बायोमेट्रिक पासपोर्ट फोटो, जो विश्वभर में स्वीकार्य हैं — सुरक्षित, तेज़ और पेशेवर।'
-                : 'AI-powered biometric passport photos accepted worldwide — secure, fast, and professional.'}
-            </p>
-          </div>
-
-          <Link to="/upload" className="footer__cta-button">
-            {t.uploadPhotoFooter}
-            <ArrowRight size={18} />
-          </Link>
-        </div>
-
-        {/* TRUST INDICATORS */}
-        <div className="footer__trust">
-          <div className="footer__trust-item">
-            <BadgeCheck size={18} />
-            <span>
-              {language === 'hi' ? 'बायोमेट्रिक अनुरूप' : 'Biometric Compliant'}
-            </span>
-          </div>
-
-          <div className="footer__trust-item">
-            <ShieldCheck size={18} />
-            <span>
-              {language === 'hi' ? 'सुरक्षित और निजी' : 'Secure & Private'}
-            </span>
-          </div>
-
-          <div className="footer__trust-item">
-            <Globe size={18} />
-            <span>
-              {language === 'hi' ? 'विश्वव्यापी स्वीकार किया गया' : 'Accepted Worldwide'}
-            </span>
-          </div>
-        </div>
 
         {/* MAIN FOOTER */}
         <div className="footer__top">

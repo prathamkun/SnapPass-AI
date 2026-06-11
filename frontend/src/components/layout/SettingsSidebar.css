@@ -1,0 +1,228 @@
+.settings-sidebar__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+}
+
+.settings-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0; /* Slide in from right */
+  width: 300px;
+  max-width: 80vw;
+  height: 100vh;
+  background: var(--color-surface);
+  z-index: 10001;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  animation: slideInRightEdge 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.settings-sidebar-dark {
+  background: var(--color-surface-dark);
+  color: var(--color-text);
+}
+
+.settings-sidebar-light {
+  background: var(--color-surface-light);
+  color: var(--color-text);
+}
+
+.settings-sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid var(--color-border);
+  height: 70px;
+}
+
+.settings-sidebar-dark .settings-sidebar__header {
+  border-bottom-color: var(--color-border-dark);
+}
+
+.settings-sidebar__header h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.settings-sidebar__back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.settings-sidebar__back-btn:hover {
+  color: var(--color-primary);
+}
+
+.settings-sidebar__close-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  transition: all 0.2s;
+}
+
+.settings-sidebar__close-btn:hover {
+  background: rgba(128, 128, 128, 0.1);
+  color: var(--color-text);
+}
+
+.settings-sidebar__content {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+}
+
+.settings-sidebar__menu {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: slideInRight 0.2s ease;
+}
+
+.settings-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.settings-sidebar__item:hover {
+  background: rgba(128, 128, 128, 0.08);
+}
+
+.settings-sidebar-light .settings-sidebar__item:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.settings-sidebar-dark .settings-sidebar__item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-primary-dark);
+}
+
+.settings-sidebar__divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 8px 16px;
+}
+
+.settings-sidebar-dark .settings-sidebar__divider {
+  background: var(--color-border-dark);
+}
+
+.settings-sidebar__themes {
+  padding: 20px;
+  animation: slideInRight 0.2s ease;
+}
+
+.settings-sidebar__themes h3 {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.settings-sidebar__theme-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-sidebar__theme-btn {
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.settings-sidebar-dark .settings-sidebar__theme-btn {
+  border-color: var(--color-border-dark);
+}
+
+.settings-sidebar__theme-btn:hover {
+  border-color: var(--color-primary);
+  background: rgba(128, 128, 128, 0.05);
+}
+
+.settings-sidebar-dark .settings-sidebar__theme-btn:hover {
+  border-color: var(--color-primary-dark);
+}
+
+.settings-sidebar__theme-btn.active {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.settings-sidebar-dark .settings-sidebar__theme-btn.active {
+  border-color: var(--color-primary-dark);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-dark);
+}
+
+@keyframes slideInRightEdge {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

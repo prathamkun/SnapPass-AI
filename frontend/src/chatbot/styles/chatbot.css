@@ -391,7 +391,7 @@
 
 /* similar implementation of dark mode theme over chatbot  */
 [data-theme='dark'] .chatbot-floating-button {
-    background: linear-gradient(135deg, #facc15, #e8c500);
+    background: linear-gradient(135deg, var(--color-text-dark), var(--color-primary-dark));
     color: black;
 }
 
@@ -434,13 +434,13 @@
 /* recommeded prompt section */
 [data-theme='dark'] .prompt-chip {
     background: rgba(194, 174, 94, 0.156);
-    color: #facc15;
-    border: 1px solid rgba(250, 204, 21, 0.15);
+    color: var(--color-text-dark);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 [data-theme='dark'] .prompt-chip:hover {
-    background: rgba(250, 204, 21, 0.18);
-    border-color: rgba(250, 204, 21, 0.35);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.35);
     transform: translateY(-2px);
 }
 
@@ -457,7 +457,7 @@
 }
 
 [data-theme='dark'] .chatbot-input-area input:focus {
-    border-color: #facc15;
+    border-color: var(--color-text-dark);
 }
 
 /* same code as light theme with bg color change  */
@@ -466,7 +466,7 @@
     height: 42px;
     border-radius: 14px;
     background:
-        linear-gradient(135deg, #facc15, #e8c500);
+        linear-gradient(135deg, var(--color-text-dark), var(--color-primary-dark));
     color: white;
     display: flex;
     align-items: center;
@@ -474,6 +474,6 @@
 }
 
 [data-theme='dark'] .chatbot-input-area button {
-    background: linear-gradient(135deg, #facc15, #e8c500);
+    background: linear-gradient(135deg, var(--color-text-dark), var(--color-primary-dark));
     color: #0c0a00;
 }
